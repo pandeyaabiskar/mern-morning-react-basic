@@ -1,23 +1,25 @@
 import Todo from "./components/Todo";
 import TodoList from "./components/TodoList";
-import Counter from "./components/Counter";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function App(props) {
+function App() {
   const [todoList, setTodoList] = useState([]);
-  const [todoString, setTodoString] = useState("");
+
   return (
-    <>
-      <Counter/><br/>
+    <div>
       <Todo
-      title="Todo for Today"
+        title="What do you want to do today?"
+        buttonText="Add Todo"
         todoList={todoList}
         setTodoList={setTodoList}
-        todoString={todoString}
-        setTodoString={setTodoString}
       />
-    <TodoList todoList={todoList}/>
-    </>
+      
+      <TodoList todoList={todoList} />
+      {/* <Todo title="What is your todo?" buttonText="Search"/>
+      <Todo title="K garchas aaja?" buttonText="Add"/>
+
+      <Todo title="K garchas aaja?" buttonText="Add">Hello</Todo> */}
+    </div>
   );
 }
 

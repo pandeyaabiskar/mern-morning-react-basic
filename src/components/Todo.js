@@ -1,27 +1,29 @@
+import { useState } from "react";
 
-function Todo({title, todoList, setTodoList, todoString, setTodoString}) {
+function Todo(props) {
+    console.log(props.children)
+  //State to hold todo list
+  const [todoInput, setTodoInput] = useState("");
+
+  //Function to add new todo
   const addTodo = () => {
-    setTodoList([...todoList, todoString]);
-    setTodoString("");
-    document.title = "About"
+    props.setTodoList([...props.todoList, todoInput]);
+    setTodoInput("");
   };
 
-  const handleText = (e) => {
-    setTodoString(e.target.value);
-  }
-
   return (
-    <>
-    <h1 className="heading">{title}</h1>
-      {/* <input name="todo" type="text" id="todo"></input> */}
+    <div>
+      <h2>{props.title}</h2>
       <input
-        name="todo"
+        id="todo"
         type="text"
-        value={todoString}
-        onChange={handleText}
+        name="todo"
+        value={todoInput}
+        onChange={(e) => setTodoInput(e.target.value)}
       ></input>
-      <button onClick={addTodo}>Add</button>
-    </>
+      <button onClick={addTodo}>{props.buttonText}</button>
+
+    </div>
   );
 }
 
