@@ -1,5 +1,6 @@
 import Todo from "./components/Todo";
 import TodoList from "./components/TodoList";
+import Login from "./components/Login";
 import { useState } from "react";
 
 function App() {
@@ -7,18 +8,15 @@ function App() {
 
   return (
     <div>
-      <Todo
+      <Login/>
+      {/* <Todo
         title="What do you want to do today?"
         buttonText="Add Todo"
         todoList={todoList}
         setTodoList={setTodoList}
       />
-      
-      <TodoList todoList={todoList} />
-      {/* <Todo title="What is your todo?" buttonText="Search"/>
-      <Todo title="K garchas aaja?" buttonText="Add"/>
 
-      <Todo title="K garchas aaja?" buttonText="Add">Hello</Todo> */}
+      <TodoList todoList={todoList} /> */}
     </div>
   );
 }

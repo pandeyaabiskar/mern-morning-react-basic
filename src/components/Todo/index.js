@@ -1,7 +1,7 @@
 import { useState } from "react";
+import './todo.css';
 
 function Todo(props) {
-    console.log(props.children)
   //State to hold todo list
   const [todoInput, setTodoInput] = useState("");
 
@@ -15,6 +15,8 @@ function Todo(props) {
     <div>
       <h2>{props.title}</h2>
       <input
+        className="input inputField"
+        style={{ backgroundColor : "red", fontSize : "50px" }}
         id="todo"
         type="text"
         name="todo"
